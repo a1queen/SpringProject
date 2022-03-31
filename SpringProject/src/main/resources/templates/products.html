@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+
+  <body>
+<form action="/productsmanagement" method="post">
+<table>
+            <tr>                                        
+                <th>PRODUCT NAME</th>       
+                <th>PRODUCT TYPE</th>              
+            </tr>                                       
+            <tr th:each="p: ${products}" >              
+                <td th:text="${p.name}">
+                <td th:text="${p.type}"></td>              
+            </tr>
+        </table>
+      <h3>Add company</h3>
+      Name: <input 
+                  type="text" 
+                  name="name"
+                  required><br />
+                  
+                   <select name="type">
+    <option th:each="type : ${T(com.example.demo.Product.Type).values()}" 
+        th:value="${type}" th:text="${type}"></option>
+</select>
+             
+                  
+                                       
+        <button type="submit">Add product</button>
+    </form>
+    
+    
+    
+    
+    
+    
+    
+  </body>
+</html>
