@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>Foodzilla</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+    <div id="success" class="gridcontainer">
+        <div class="middle">
+            <div class="header centered">
+                <h1>Order placed successfully</h1>
+            </div>
+            <div id="message" class="centered">
+
+
+                <a th:href="@{/chooseproducts}">Place another order!</a>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

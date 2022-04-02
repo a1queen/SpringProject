@@ -1,41 +1,48 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
-  </head>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
+<head>
+  <title>Foodzilla</title>
+  <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
 
+<body>
+  <div class="gridcontainer">
+    <div class="header centered">
+      <h1>Deliver my order to...</h1>
+    </div>
     <form method="POST" th:action="@{sendorder}" th:object="${details}">
-
-
-      <h3>Deliver my taco masterpieces to...</h3>
-      <label for="name">Name: </label>
-      <input type="text" th:field="*{name}"/>
-      <br/>
-      
-      <input type="hidden" th:field="*{order}" id="order">
-    
-     
-       <h3>Deliver my taco masterpieces to...</h3>
-      <label for="surname">Surname: </label>
-      <input type="text" th:field="*{surname}"/>
-      <br/>
-      <h3>Deliver my taco masterpieces to...</h3>
-      <label for="room">Room: </label>
-      <input type="text" th:field="*{room}"/>
-      <br/>
-       <br/>
-      <h2>Please, choose your company:</h2>
-       <select th:field="*{company}">
-    <option th:each="i : ${companies}" th:value="${i.id}" th:text="${i.name}">
-    </option>
-</select>
-         </div>
+      <div id="details-group">
+        <div class="details">
+          <label for="name">Name: </label>
+          <input type="text" th:field="*{name}" />
+          <br />
+        </div>
+        <div class="details">
+          <label for="surname">Surname: </label>
+          <input type="text" th:field="*{surname}" />
+          <br />
+        </div>
+        <div class="details">
+          <label for="room">Room: </label>
+          <input type="text" th:field="*{room}" />
+          <br />
+        </div>
+        <br />
+        <h2>Please, select your company:</h2>
+        <select th:field="*{company}">
+          <option th:each="i : ${companies}" th:value="${i.id}" th:text="${i.name}">
+          </option>
+        </select>
       </div>
-      <input type="submit" value="Submit Order"/>
+
+ 
+
+
+      <button>Submit Your Order!</button>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>

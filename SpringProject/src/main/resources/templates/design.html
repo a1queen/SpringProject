@@ -1,97 +1,84 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
-  </head>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
-    <h1>Design your taco!</h1>
-  
+<head>
+  <title>Foodzilla</title>
+  <link rel="stylesheet" th:href="@{/styles.css}" />
+  <link rel="stylesheet" th:href="@{/productsStyles.css}" />
+</head>
 
-    
-
-     <form method="POST"  th:object="${order}">
-    <div class="grid">
-  
-      <div class="ingredient-group" id="wraps">
-      <h2>Soups:</h2>
-      <div th:each="product : ${products}">
-      <span th:if="${product.type == T(com.example.model.Product.Type).SOUP}">
-      <input th:field="*{products}" type="checkbox" 
-               th:value="${product.id}"
-                <span th:text="${product.name}"><br/>
-      </span>
-       
-        </span>
+<body>
+  <div class="gridcontainer">
+    <div class="header centered">
+      <h1>Place your Order!</h1>
+    </div>
+    <form method="POST" th:object="${order}">
+      <div id="products">
+        <div class="ingredient-group" id="soups">
+          <h2>Soups:</h2>
+          <div th:each="product : ${products}">
+            <span th:if="${product.type == T(com.example.model.Product.Type).SOUP}">
+              <input th:field="*{products}" type="checkbox" th:value="${product.id}" <span
+                th:text="${product.name}"><br />
+            </span>
+            </span>
+          </div>
+        </div>
+        <br />
+        <div class="ingredient-group" id="mains">
+          <h2>Main dishes:</h2>
+          <div th:each="product : ${products}">
+            <span th:if="${product.type == T(com.example.model.Product.Type).MAIN}">
+              <input th:field="*{products}" type="checkbox" th:value="${product.id}" <span
+                th:text="${product.name}"><br /></span>
+            </span>
+          </div>
+        </div>
+        <br />
+        <div class="ingredient-group" id="desserts">
+          <h2>Desserts:</h2>
+          <div th:each="product : ${products}">
+            <span th:if="${product.type == T(com.example.model.Product.Type).DESSERT}">
+              <input th:field="*{products}" type="checkbox" th:value="${product.id}" <span
+                th:text="${product.name}"><br /></span>
+            </span>
+          </div>
+        </div>
+        <br />
+        <div class="ingredient-group" id="drinks">
+          <h2>Drinks:</h2>
+          <div th:each="product : ${products}">
+            <span th:if="${product.type == T(com.example.model.Product.Type).DRINK}">
+              <input th:field="*{products}" type="checkbox" th:value="${product.id}" <span
+                th:text="${product.name}"><br /></span>
+            </span>
+          </div>
+        </div>
       </div>
-       </div>
-      
-
-      <br/>
-      <h2>Main dishes:</h2>
-      <div th:each="product : ${products}">
-      <span th:if="${product.type == T(com.example.model.Product.Type).MAIN}">
-       <input th:field="*{products}" type="checkbox" 
-               th:value="${product.id}"
-        <span th:text="${product.name}"><br/></span>
-        </span>
+      <br />
+      <div id="payment">
+        <div id="paymentHeader">
+          <h2>Payment:</h2>
+        </div>
+        <div th:each="type : ${types}">
+          <input type="radio" th:field="*{types}" th:value="${type}" />
+          <span th:if="${type == T(com.example.model.NewOrder.Type).INADVANCE}">
+            <label th:for="${type}" th:text="'In advance'"></label>
+          </span>
+          <span th:if="${type == T(com.example.model.NewOrder.Type).ONDELIVERY}">
+            <label th:for="${type}" th:text="'On delivery'"></label>
+          </span>
+        </div>
       </div>
-     
-      <br/>
-      <h2>Desserts:</h2>
-      <div th:each="product : ${products}">
-      <span th:if="${product.type == T(com.example.model.Product.Type).DESSERT}">
-      <input th:field="*{products}" type="checkbox" 
-               th:value="${product.id}"
-        <span th:text="${product.name}"><br/></span>
-        </span>
-      </div>
-     
-      <br/>
-      <h2>Drinks:</h2>
-      <div th:each="product : ${products}">
-      <span th:if="${product.type == T(com.example.model.Product.Type).DRINK}">
-      <input th:field="*{products}" type="checkbox" 
-               th:value="${product.id}"
-        <span th:text="${product.name}"><br/></span>
-        </span>
-      </div>
-     
-       <br/>
-      
-      
-      <h2>Payment:</h2>
-     
-      
-      
-            <div th:each="type : ${types}">
-                <input type="radio" th:field="*{types}" th:value="${type}" />
-               <span   th:if="${type == T(com.example.model.NewOrder.Type).INADVANCE}">
-                      <label th:for="${type}" th:text= "'In advance'"></label>
-           </span>
-            <span   th:if="${type == T(com.example.model.NewOrder.Type).ONDELIVERY}">
-                      <label th:for="${type}" th:text= "'On delivery'"></label>
-           </span>
-           </div>
-        
-      
-      
-      
-      
-      
-      
-      </div>
-
       <div>
-
-
-      
-      <br/>
-
-      <button>Submit Your Order!</button>
+        <br />
+        <div class="centered">
+          <button>Submit Your Order!</button>
+        </div>
       </div>
-     </form>
-  </body>
+    </form>
+  </div>
+</body>
+
 </html>

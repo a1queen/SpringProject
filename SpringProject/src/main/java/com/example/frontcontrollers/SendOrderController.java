@@ -37,7 +37,7 @@ public class SendOrderController {
 	@PostMapping
 	public String processTaco(OrderDetails details) {
 		detailsProxy.addOrderDetails(details);
-		return "redirect:/";
+		return "redirect:/success";
 	}
 
 }

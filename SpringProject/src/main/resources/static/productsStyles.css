@@ -1,0 +1,34 @@
+@media (min-width: 600px) {
+    #products {
+        display: grid;
+
+        
+            grid-template-columns: auto ;
+            grid-template-rows: auto;
+            grid-template-areas: 
+              "soups mains"
+              "desserts drinks";
+      }
+  
+  #soups{
+    grid-area: soups;
+  }
+  #mains{
+    grid-area: mains;
+  }
+  #desserts{
+    grid-area: desserts;
+  }
+  
+  #drinks{
+    grid-area: drinks;
+  }
+  .header{
+    grid-area: header;
+  }
+
+  #payment{
+    grid-area: payment;
+  }
+  
+    }

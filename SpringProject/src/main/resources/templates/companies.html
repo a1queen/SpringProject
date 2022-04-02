@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
-  </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
-<form action="/companiesmanagement" method="post">
-<table>
-            <tr>                                        
-                <th>COMPANY NAME</th>                   
-                             
-            </tr>                                       
-            <tr th:each="p: ${companies}" >              
-                <td th:text="${p.name}"></td>           
-            </tr>
-        </table>
-      <h3>Add company</h3>
-      Name: <input 
-                  type="text" 
-                  name="name"
-                  required><br />                     
-        <button type="submit">Add company</button>
-    </form>
-  </body>
+<head>
+  <title>Foodzilla</title>
+  <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+  <form action="/companiesmanagement" method="post">
+    <table>
+      <tr>
+        <th>COMPANY NAME</th>
+      </tr>
+      <tr th:each="p: ${companies}">
+        <td th:text="${p.name}"></td>
+      </tr>
+    </table>
+    <h3>Add company</h3>
+    Name: <input type="text" name="name" required><br />
+    <button type="submit">Add company</button>
+  </form>
+</body>
+
 </html>

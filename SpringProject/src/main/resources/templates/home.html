@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Foodzilla - main page</title>
-  </head>
   
-  <body>
-   <form  method="POST">
-    <h1>Welcome to...</h1>
-    <div id="mainImage" style="background-size: cover;">
-    <img th:src="@{/images/mainfood.jpg}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <title>Foodzilla - main page</title>
+  <link rel="stylesheet" th:href="@{/styles.css}" />
+  <link rel="stylesheet" th:href="@{/homeStyles.css}" />
+</head>
+
+<body>
+  <div class="gridcontainer">
+  <form method="POST">
+    <div id="welcome" class="centered middle">
+    <div id="mainImage" >
+      <img th:src="@{/images/logo.png}" />
+</div>
+<h4>
+     Welcome to Foodzilla. Click the button to place an order!
+    </h4>
+      <br />
+      
+      <button>Place Your Order!</button>
    
-   
-        This Hot deal
-        <br/>
-        <button>Submit Your Order!</button>
     </div>
-</form>
-   
-  </body>
+  
+  </form>
+</div>
+</body>
+
 </html>

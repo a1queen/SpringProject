@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&family=Yanone+Kaffeesatz&display=swap');
+
+* {
+    box-sizing: border-box;
+    background-color:rgb(255, 253, 227);
+  }
+.gridcontainer{
+    font-family: 'Sunflower', sans-serif;
+}
+
+.centered{
+    text-align: center; 
+}
+
+button { 
+    font-family: 'Sunflower', sans-serif;
+    background-color: rgb(255, 244, 89);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:medium;
+}
+
+button:hover {
+    background-color: rgb(255, 238, 0);
+    color: black;
+}
+
+.header { 
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h2 {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.1em;
+}
+h4{
+    margin-block-end: 0.25em;
+
+}
+
+@media (min-width: 600px) {
+    body {
+        margin-left: 35px;
+    }
+
+    .middle{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (max-width: 599px) {
+      h1{
+        margin-block-end: 0.4em;
+      }
+    body {
+        margin: 8px;
+    }
+
+    .middle{
+        position: absolute;
+        
+        top: 50%;
+        transform: translate(-0%, -50%);
+    }
+  }
