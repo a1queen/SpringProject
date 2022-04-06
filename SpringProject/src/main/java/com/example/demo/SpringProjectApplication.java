@@ -24,6 +24,7 @@ public class SpringProjectApplication {
 		SpringApplication.run(SpringProjectApplication.class, args);
 	}
 
+	
 	/*
 	 * @Bean CommandLineRunner runner(ProductRepository productRepository,
 	 * OrderRepository orderRepository, CompanyRepository companyRepository,
@@ -76,5 +77,6 @@ public class SpringProjectApplication {
 	 * 
 	 * }; }
 	 */
+	 
 
 }

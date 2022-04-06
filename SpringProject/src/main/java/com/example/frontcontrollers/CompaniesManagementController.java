@@ -28,9 +28,11 @@ public class CompaniesManagementController {
 
 	@PostMapping
 	public String processCompany(String name, Model model) {
-		var companies = companyProxy.getCompanies();
-		model.addAttribute("companies", companies);
 		companyProxy.addCompanyDetails(name);
+		var companies = companyProxy.getCompanies();
+		
+		model.addAttribute("companies", companies);
+		
 		return "redirect:/companiesmanagement";
 	}
 }

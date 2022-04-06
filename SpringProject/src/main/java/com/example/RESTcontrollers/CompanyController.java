@@ -27,7 +27,7 @@ public class CompanyController {
 	}
 
 	@PostMapping
-	public ResponseEntity<String> addCompanyDetails(@RequestBody(required = true) String name) {
+	public ResponseEntity<String> addCompanyDetails(@RequestBody String name) {
 		repository.save(new Company(name));
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(name);
 	}

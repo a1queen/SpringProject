@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.json.simple.JSONObject;
 
 import com.example.model.Product;
 import com.example.proxies.ProductsProxy;
@@ -29,10 +30,13 @@ public class ProductsManagementController {
 	}
 
 	@PostMapping
-	public String processCompany(String name, Product.Type type, Model model) {
+	public String processCompany(String name, Product.Type type, String price, Model model) {
 		var products = productsProxy.getProducts();
-
-		productsProxy.addProduct(name, type);
+		JSONObject jobject = new JSONObject();
+		jobject.put("name", name);
+		jobject.put("type", type);
+		jobject.put("price", price);
+		productsProxy.addProduct(jobject);
 		model.addAttribute("products", products);
 
 		return "redirect:/productsmanagement";

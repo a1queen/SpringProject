@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
@@ -24,6 +24,7 @@
       </table>
       <h3>Add product</h3>
       Name: <input type="text" name="name" required><br />
+      Price: <input type="text" name="price" required><br />
       <select name="type">
         <option th:each="type : ${T(com.example.model.Product.Type).values()}" th:value="${type}" th:text="${type}">
         </option>

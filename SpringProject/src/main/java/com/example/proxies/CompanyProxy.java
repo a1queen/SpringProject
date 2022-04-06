@@ -17,6 +17,6 @@ public interface CompanyProxy {
 	List<Company> getCompanies();
 
 	@PostMapping("/company")
-	void addCompanyDetails(@RequestParam(required = true) String name);
+	void addCompanyDetails(@RequestBody(required = true) String name);
 
 }
